@@ -23,7 +23,8 @@ Public Class Dashboard
 
     Private Sub Dashboard_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         usersTab.Hide()
-        dashboardTab.Hide()
+        dashboardTab.Show()
+        profImage.Image = Image.FromFile(_userSession.ProfImage)
 
         'User Form
         addUserFormPane.Hide()
@@ -106,7 +107,6 @@ Public Class Dashboard
             End While
 
         Catch ex As Exception
-            MsgBox(ex.ToString())
             MsgBox("Something went wrong. Please try again later!")
             Return
         End Try
@@ -262,6 +262,8 @@ Public Class Dashboard
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        Dim btn As Button = CType(sender, Button)
+        Dim productId As String = btn.Tag.ToString()
 
         Dim conn As New SqlClient.SqlConnection
         conn.ConnectionString = "server=R3COM8;user id=sa;password=sqlpassword123;Database=sample;"
@@ -270,11 +272,11 @@ Public Class Dashboard
             conn.Open()
             Dim stmt As String = "DELETE FROM [dbo].[user_information] WHERE userId=@id; DELETE FROM [dbo].[users] WHERE id=@id"
             Dim cmd As New SqlCommand(stmt, conn)
-            cmd.Parameters.AddWithValue("@id", selectedId)
+
+            cmd.Parameters.AddWithValue("@id", productId)
             cmd.ExecuteNonQuery()
 
         Catch ex As Exception
-            MsgBox(ex.ToString())
             MsgBox(ex.ToString(), MsgBoxStyle.Exclamation)
         End Try
 
@@ -293,9 +295,9 @@ Public Class Dashboard
         Me.Hide()
         Dim login As New Login()
         login.Show()
-
     End Sub
-    Public Sub PictureBox6_Click(sender As Object, e As EventArgs) Handles PictureBox6.Click
+
+    Public Sub PictureBox6_Click(sender As Object, e As EventArgs) Handles profImage.Click
         showProfilePage()
     End Sub
 
@@ -303,85 +305,9 @@ Public Class Dashboard
         showProfilePage()
     End Sub
 
-
-    'START of Products Pane
-    'Private Sub productsTabPane_Click(sender As Object, e As EventArgs) Handles productsTabPane.Click
-    '    dashboardTab.Hide()
-    '    usersTab.Hide()
-    '    productsTab.Show()
-
-    '    ' Populate Record PRODUCT
-    '    Dim conn As New SqlClient.SqlConnection
-    '    conn.ConnectionString = "server=R3COM8;user id=sa;password=sqlpassword123;Database=sample;"
-    '    Try
-    '        conn.Open()
-    '        Dim query As String = "SELECT * FROM [dbo].[products] AS p JOIN [dbo].[category] AS c ON p.categoryId = c.id"
-    '        Dim cmd As New SqlCommand(query, conn)
-    '        Dim reader = cmd.ExecuteReader()
-
-    '        While reader.Read()
-
-    '            'nameProd.Text = reader("name")
-    '            'price.Text = reader("price")
-    '            'quantity.Text = reader("quantity")
-    '            'description.Text = reader("description")
-
-    '            ' Create card panel
-    '            Dim productPane As New Panel()
-    '            productPane.Width = 259
-    '            productPane.Height = 412
-    '            productPane.BackColor = Color.White
-
-    '            ' Code label
-    '            Dim code As New Label()
-    '            code.Text = reader("code")
-    '            code.Font = New Font("Segoe UI", 10, FontStyle.Bold)
-    '            code.AutoSize = True
-    '            code.Location = New Point(188, 16)
-
-    '            ' Add controls to card
-    '            productPane.Controls.Add(code)
-
-    '            ' Add card to FlowLayoutPanel
-    '            FlowLayoutPanel1.Controls.Add(productPane)
-
-    '        End While
-
-    '    Catch ex As Exception
-    '        MsgBox(ex.ToString())
-    '        MsgBox("Something went wrong. Please try again later!")
-    '        Return
-
-    '    End Try
-
-    '    ' Creating PRODUCT
-    '    'Try
-    '    '    conn.Open()
-    '    '    Dim query As String = "SELECT * FROM [dbo].[products] AS p JOIN [dbo].[category] AS c ON p.id = c.categoryId"
-    '    '    Dim cmd As New SqlCommand(query, conn)
-    '    '    Dim reader = cmd.ExecuteReader()
-
-    '    '    While reader.Read()
-    '    '        code.Text = reader("code")
-    '    '        prodName.Text = reader("name")
-    '    '        price.Text = reader("price")
-    '    '        quantity.Text = reader("quantity")
-    '    '        description.Text = reader("description")
-    '    '    End While
-
-    '    'Catch ex As Exception
-    '    '    MsgBox(ex.ToString())
-    '    '    MsgBox("Something went wrong. Please try again later!")
-    '    '    Return
-
-    '    'End Try
-
-    '    ' EDITING PRODUCT
-
-
-
-    '    ' DELETING PRODUCT
-    'End Sub
-    'END of Products Pane
+    Private Sub categoryTabPane_Click(sender As Object, e As EventArgs) Handles categoryTabPane.Click
+        Dim category As New Category()
+        category.Show()
+    End Sub
 
 End Class

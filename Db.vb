@@ -1,29 +1,25 @@
-﻿'Public Class Db
+﻿Imports System.Data.SqlClient
 
-'    Private Propert conn As New SqlClient.SqlConnection
+Public Class Db
 
-'    Dim conn As New SqlClient.SqlConnection
-'        conn.ConnectionString = "server=R3COM8;user id=sa;password=sqlpassword123;Database=sample
+    Private Shared Property conn As New SqlClient.SqlConnection
+    Private Shared Property stmt = "server=R3COM8;user id=sa;password=sqlpassword123;Database=sample"
 
-'    Public Sub New()
-'        Try
-'            conn.Open()
-'            Dim stmt As String = "SELECT * FROM USERS AS u JOIN USERS_INFO AS ui ON u.id = ui.userId WHERE u.id = ui.userId"
-'            Dim cmd As New SqlCommand(stmt, conn)
+    Public Sub New()
+    End Sub
 
-'            cmd.Parameters.AddWithValue("@username", username)
-'            cmd.Parameters.AddWithValue("@password", password)
-'            cmd.Parameters.AddWithValue("@name", fullName)
-'            cmd.Parameters.AddWithValue("@gender", gender)
-'            cmd.Parameters.AddWithValue("@occupation", occupation)
-'            cmd.Parameters.AddWithValue("@dateOfBirth", dateOfBirth)
-'            cmd.Parameters.AddWithValue("@isAgree", True)
-'            cmd.ExecuteNonQuery()
+    Public Shared Function selectCmd(Optional columnName As String = "*", Optional tableName As String = "[dbo].[users]", Optional where As String = "") As SqlCommand
+        Try
+            conn.Open()
+            Dim cmd As New SqlCommand("SELECT " & columnName & " FROM " & tableName & " " & where, conn)
+            Return cmd
+            Throw New Exception("Something wen't wrong while executing cmd")
+        Catch ex As Exception
+            'MsgBox(ex.ToString())
+            Return Nothing
+        End Try
+    End Function
 
-'        Catch ex As Exception
-'            MsgBox(ex.ToString())
-'            MsgBox(ex.ToString(), MsgBoxStyle.Exclamation)
-'        End Try
-'    End Sub
 
-'End Class
+
+End Class

@@ -252,7 +252,7 @@ Public Class Products
         productPane.Controls.Add(description)
         productPane.Controls.Add(price)
         productPane.Controls.Add(Label6)
-        productPane.Controls.Add(Label7)
+        'productPane.Controls.Add(Label7)
         productPane.Controls.Add(Label8)
         productPane.Controls.Add(editBtn)
         productPane.Controls.Add(deleteBtn)
@@ -371,4 +371,5 @@ Public Class Products
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
         Exporter.ExportToExcel()
     End Sub
+
 End Class

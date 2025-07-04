@@ -39,7 +39,7 @@ Partial Class Dashboard
         Me.PictureBox11 = New System.Windows.Forms.PictureBox()
         Me.Logout = New System.Windows.Forms.Label()
         Me.Label31 = New System.Windows.Forms.Label()
-        Me.reportTabPane = New System.Windows.Forms.Panel()
+        Me.categoryTabPane = New System.Windows.Forms.Panel()
         Me.PictureBox5 = New System.Windows.Forms.PictureBox()
         Me.Logo = New System.Windows.Forms.Label()
         Me.productsTabPane = New System.Windows.Forms.Panel()
@@ -58,7 +58,7 @@ Partial Class Dashboard
         Me.Panel7 = New System.Windows.Forms.Panel()
         Me.PictureBox10 = New System.Windows.Forms.PictureBox()
         Me.username = New System.Windows.Forms.Label()
-        Me.PictureBox6 = New System.Windows.Forms.PictureBox()
+        Me.profImage = New System.Windows.Forms.PictureBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.dashboardTab = New System.Windows.Forms.Panel()
         Me.Panel11 = New System.Windows.Forms.Panel()
@@ -140,7 +140,7 @@ Partial Class Dashboard
         CType(Me.PictureBox14, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.logoutTabPane.SuspendLayout()
         CType(Me.PictureBox11, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.reportTabPane.SuspendLayout()
+        Me.categoryTabPane.SuspendLayout()
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.productsTabPane.SuspendLayout()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -152,7 +152,7 @@ Partial Class Dashboard
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel7.SuspendLayout()
         CType(Me.PictureBox10, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.profImage, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.dashboardTab.SuspendLayout()
         Me.Panel11.SuspendLayout()
         CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -189,7 +189,7 @@ Partial Class Dashboard
         Me.Panel1.Controls.Add(Me.flowLayout)
         Me.Panel1.Controls.Add(Me.logoutTabPane)
         Me.Panel1.Controls.Add(Me.Label31)
-        Me.Panel1.Controls.Add(Me.reportTabPane)
+        Me.Panel1.Controls.Add(Me.categoryTabPane)
         Me.Panel1.Controls.Add(Me.productsTabPane)
         Me.Panel1.Controls.Add(Me.userTabPane)
         Me.Panel1.Controls.Add(Me.homeTabPane)
@@ -373,18 +373,18 @@ Partial Class Dashboard
         Me.Label31.TabIndex = 47
         Me.Label31.Text = "SAP V1"
         '
-        'reportTabPane
+        'categoryTabPane
         '
-        Me.reportTabPane.Controls.Add(Me.PictureBox5)
-        Me.reportTabPane.Controls.Add(Me.Logo)
-        Me.reportTabPane.Dock = System.Windows.Forms.DockStyle.Top
-        Me.reportTabPane.Font = New System.Drawing.Font("Wingdings", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(2, Byte))
-        Me.reportTabPane.ForeColor = System.Drawing.Color.Red
-        Me.reportTabPane.Location = New System.Drawing.Point(0, 355)
-        Me.reportTabPane.Margin = New System.Windows.Forms.Padding(4, 77, 4, 77)
-        Me.reportTabPane.Name = "reportTabPane"
-        Me.reportTabPane.Size = New System.Drawing.Size(250, 77)
-        Me.reportTabPane.TabIndex = 13
+        Me.categoryTabPane.Controls.Add(Me.PictureBox5)
+        Me.categoryTabPane.Controls.Add(Me.Logo)
+        Me.categoryTabPane.Dock = System.Windows.Forms.DockStyle.Top
+        Me.categoryTabPane.Font = New System.Drawing.Font("Wingdings", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(2, Byte))
+        Me.categoryTabPane.ForeColor = System.Drawing.Color.Red
+        Me.categoryTabPane.Location = New System.Drawing.Point(0, 355)
+        Me.categoryTabPane.Margin = New System.Windows.Forms.Padding(4, 77, 4, 77)
+        Me.categoryTabPane.Name = "categoryTabPane"
+        Me.categoryTabPane.Size = New System.Drawing.Size(250, 77)
+        Me.categoryTabPane.TabIndex = 13
         '
         'PictureBox5
         '
@@ -403,9 +403,9 @@ Partial Class Dashboard
         Me.Logo.Location = New System.Drawing.Point(77, 30)
         Me.Logo.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Logo.Name = "Logo"
-        Me.Logo.Size = New System.Drawing.Size(55, 19)
+        Me.Logo.Size = New System.Drawing.Size(74, 19)
         Me.Logo.TabIndex = 0
-        Me.Logo.Text = "Report"
+        Me.Logo.Text = "Category"
         '
         'productsTabPane
         '
@@ -551,7 +551,7 @@ Partial Class Dashboard
         '
         Me.Panel7.Controls.Add(Me.PictureBox10)
         Me.Panel7.Controls.Add(Me.username)
-        Me.Panel7.Controls.Add(Me.PictureBox6)
+        Me.Panel7.Controls.Add(Me.profImage)
         Me.Panel7.Controls.Add(Me.Label5)
         Me.Panel7.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel7.Location = New System.Drawing.Point(250, 0)
@@ -582,15 +582,15 @@ Partial Class Dashboard
         Me.username.TabIndex = 3
         Me.username.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
-        'PictureBox6
+        'profImage
         '
-        Me.PictureBox6.Image = CType(resources.GetObject("PictureBox6.Image"), System.Drawing.Image)
-        Me.PictureBox6.Location = New System.Drawing.Point(820, 14)
-        Me.PictureBox6.Name = "PictureBox6"
-        Me.PictureBox6.Size = New System.Drawing.Size(51, 42)
-        Me.PictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox6.TabIndex = 2
-        Me.PictureBox6.TabStop = False
+        Me.profImage.Image = CType(resources.GetObject("profImage.Image"), System.Drawing.Image)
+        Me.profImage.Location = New System.Drawing.Point(820, 14)
+        Me.profImage.Name = "profImage"
+        Me.profImage.Size = New System.Drawing.Size(51, 42)
+        Me.profImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.profImage.TabIndex = 2
+        Me.profImage.TabStop = False
         '
         'Label5
         '
@@ -1491,8 +1491,8 @@ Partial Class Dashboard
         Me.logoutTabPane.ResumeLayout(False)
         Me.logoutTabPane.PerformLayout()
         CType(Me.PictureBox11, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.reportTabPane.ResumeLayout(False)
-        Me.reportTabPane.PerformLayout()
+        Me.categoryTabPane.ResumeLayout(False)
+        Me.categoryTabPane.PerformLayout()
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
         Me.productsTabPane.ResumeLayout(False)
         Me.productsTabPane.PerformLayout()
@@ -1508,7 +1508,7 @@ Partial Class Dashboard
         Me.Panel7.ResumeLayout(False)
         Me.Panel7.PerformLayout()
         CType(Me.PictureBox10, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.profImage, System.ComponentModel.ISupportInitialize).EndInit()
         Me.dashboardTab.ResumeLayout(False)
         Me.dashboardTab.PerformLayout()
         Me.Panel11.ResumeLayout(False)
@@ -1563,11 +1563,11 @@ Partial Class Dashboard
     Friend WithEvents PictureBox4 As System.Windows.Forms.PictureBox
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents userTabPane As System.Windows.Forms.Panel
-    Friend WithEvents reportTabPane As System.Windows.Forms.Panel
+    Friend WithEvents categoryTabPane As System.Windows.Forms.Panel
     Friend WithEvents PictureBox5 As System.Windows.Forms.PictureBox
     Friend WithEvents Logo As System.Windows.Forms.Label
     Friend WithEvents Panel7 As System.Windows.Forms.Panel
-    Friend WithEvents PictureBox6 As System.Windows.Forms.PictureBox
+    Friend WithEvents profImage As System.Windows.Forms.PictureBox
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents userTabPic As System.Windows.Forms.PictureBox
     Friend WithEvents userTabLabel As System.Windows.Forms.Label

@@ -26,7 +26,7 @@ Public Class Login
 
             If reader.Read() And reader("username").Equals(logUsername) And reader("password").Equals(logPassword) Then
                 Me.Hide()
-                Dim userSession = New Session(reader("username"), reader("name"), reader("occupation"), reader("dateOfBirth"), reader("gender"))
+                Dim userSession = New Session(reader("id"), reader("username"), reader("name"), reader("occupation"), reader("dateOfBirth"), reader("gender"), reader("prof_image"))
 
                 Dim dashboard = New Dashboard(userSession)
                 dashboard.Show()
@@ -34,6 +34,9 @@ Public Class Login
 
         Catch ex As Exception
             MsgBox("Invalid Credentials!", MsgBoxStyle.Exclamation)
+            Me.logUsername.Select()
+            Me.logUsername.SelectAll()
+            Me.logPass.Text = ""
         Finally
             conn.Close()
         End Try
