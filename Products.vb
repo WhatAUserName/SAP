@@ -1,12 +1,22 @@
 ﻿Imports System.Data.SqlClient
 
 Public Class Products
+    Private productId As String
 
     Private Sub prdTab_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         flowLayout1.Controls.Clear()
         addProductForm.Hide()
         editProductForm.Hide()
         populateProducts()
+
+        Dim radius As Integer = 10
+        Dim path As New Drawing2D.GraphicsPath()
+        path.AddArc(0, 0, radius, radius, 180, 90)
+        path.AddArc(Button7.Width - radius, 0, radius, radius, 270, 90)
+        path.AddArc(Button7.Width - radius, Button7.Height - radius, radius, radius, 0, 90)
+        path.AddArc(0, Button7.Height - radius, radius, radius, 90, 90)
+        path.CloseAllFigures()
+        Button7.Region = New Region(path)
     End Sub
 
     Private Sub populateProducts()
@@ -16,7 +26,7 @@ Public Class Products
         conn.ConnectionString = "server=R3COM8;user id=sa;password=sqlpassword123;Database=sample;"
         Try
             conn.Open()
-            Dim query As String = "SELECT * FROM [dbo].[products] AS p JOIN [dbo].[category] AS c ON p.categoryId = c.id"
+            Dim query As String = "SELECT c.name AS categ_name, p.* FROM [dbo].[products] AS p INNER JOIN [dbo].[category] AS c ON p.categoryId = c.id"
             Dim cmd As New SqlCommand(query, conn)
             Dim reader = cmd.ExecuteReader()
 
@@ -99,7 +109,6 @@ Public Class Products
 
     Public Sub renderComponent(reader As SqlDataReader)
 
-
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Products))
         ' Creating new pane
         Dim productPane As New Panel()
@@ -123,6 +132,15 @@ Public Class Products
         PictureBox1.TabIndex = 0
         PictureBox1.TabStop = False
 
+        'Category Label
+        Dim categoryName As New Label()
+        categoryName.Text = reader("categ_name")
+        categoryName.Font = New Font("Century Gothic", 9.75)
+        categoryName.AutoSize = True
+        categoryName.Location = New Point(11, 254)
+        categoryName.ForeColor = Color.DimGray
+       
+
         ' Name label
         Dim nameProd As New Label()
         nameProd.Text = reader("name")
@@ -143,17 +161,17 @@ Public Class Products
         Label8.Text = "Stocks"
 
 
-        'Description Title Label
-        Dim Label7 As New Label()
-        Label7.AutoSize = True
-        Label7.Font = New System.Drawing.Font("Century Gothic", 9.75!)
-        Label7.ForeColor = System.Drawing.Color.DimGray
-        Label7.Location = New System.Drawing.Point(14, 349)
-        Label7.Name = "Label7"
-        Label7.Size = New System.Drawing.Size(80, 17)
-        Label7.TabIndex = 4
+        ''Description Title Label (Undecided whether to add or not)
+        'Dim Label7 As New Label()
+        'Label7.AutoSize = True
+        'Label7.Font = New System.Drawing.Font("Century Gothic", 9.75!)
+        'Label7.ForeColor = System.Drawing.Color.DimGray
+        'Label7.Location = New System.Drawing.Point(14, 349)
+        'Label7.Name = "Label7"
+        'Label7.Size = New System.Drawing.Size(80, 17)
+        'Label7.TabIndex = 4
+        'Label7.Text = "Description"
 
-        Label7.Text = "Description"
         'Stocks label
         Dim stocks As New Label()
         stocks.Text = reader("quantity")
@@ -198,7 +216,7 @@ Public Class Products
         editBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         editBtn.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         editBtn.ForeColor = System.Drawing.Color.White
-        editBtn.Location = New System.Drawing.Point(14, 430)
+        editBtn.Location = New System.Drawing.Point(17, 429)
         editBtn.Name = "Button3"
         editBtn.Size = New System.Drawing.Size(129, 35)
         editBtn.TabIndex = 6
@@ -216,7 +234,7 @@ Public Class Products
         deleteBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         deleteBtn.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         deleteBtn.ForeColor = System.Drawing.Color.White
-        deleteBtn.Location = New System.Drawing.Point(162, 430)
+        deleteBtn.Location = New System.Drawing.Point(162, 429)
         deleteBtn.Name = "Button4"
         deleteBtn.Size = New System.Drawing.Size(129, 35)
         deleteBtn.TabIndex = 7
@@ -228,6 +246,7 @@ Public Class Products
         ' Add controls to card
         productPane.Controls.Add(code)
         productPane.Controls.Add(PictureBox1)
+        productPane.Controls.Add(categoryName)
         productPane.Controls.Add(nameProd)
         productPane.Controls.Add(stocks)
         productPane.Controls.Add(description)
@@ -235,7 +254,7 @@ Public Class Products
         productPane.Controls.Add(Label6)
         productPane.Controls.Add(Label7)
         productPane.Controls.Add(Label8)
-        productPane.Controls.Add(updateBtn)
+        productPane.Controls.Add(editBtn)
         productPane.Controls.Add(deleteBtn)
 
         ' Add card to FlowLayoutPanel
@@ -254,7 +273,7 @@ Public Class Products
             conn.Open()
             Dim stmt As String = "DELETE FROM [dbo].[products] WHERE id=@id"
             Dim cmd As New SqlCommand(stmt, conn)
-            cmd.Parameters.AddWithValue("@id", productId)
+            cmd.Parameters.AddWithValue("@id", productId.ToString())
             cmd.ExecuteNonQuery()
 
         Catch ex As Exception
@@ -263,8 +282,8 @@ Public Class Products
         populateProducts()
     End Sub
 
-    Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
-        addProductForm.Hide()
+    Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
+        addProductForm.Show()
     End Sub
 
     Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
@@ -282,6 +301,7 @@ Public Class Products
             cmd.Parameters.AddWithValue("@quantity", CType(addQty.Text, Integer))
             cmd.Parameters.AddWithValue("@description", addDescription.Text)
             cmd.Parameters.AddWithValue("@categoryId", 1)
+
             cmd.ExecuteNonQuery()
 
         Catch ex As Exception
@@ -302,7 +322,7 @@ Public Class Products
 
         Try
             conn.Open()
-            Dim stmt As String = "UPDATE [dbo].[products] SET code=@code, name=@name, price=@price, quantity=@quantity, description=@description WHERE id=@id; UPDATE [dbo].[user_information] SET name=@name, dateOfBirth=@dateOfBirth, gender=@gender WHERE userId=@id;"
+            Dim stmt As String = "UPDATE [dbo].[products] SET code=@code, name=@name, price=@price, quantity=@quantity, description=@description WHERE id=@id"
             Dim cmd As New SqlCommand(stmt, conn)
 
             cmd.Parameters.AddWithValue("@code", editCode.Text)
@@ -310,6 +330,7 @@ Public Class Products
             cmd.Parameters.AddWithValue("@price", CType(editPrice.Text, Decimal))
             cmd.Parameters.AddWithValue("@quantity", CType(editQty.Text, Integer))
             cmd.Parameters.AddWithValue("@description", editDescription.Text)
+            cmd.Parameters.AddWithValue("@id", productId)
             cmd.ExecuteNonQuery()
 
         Catch ex As Exception
@@ -323,7 +344,7 @@ Public Class Products
     Private Sub editBtn_Click(sender As Object, e As EventArgs)
         editProductForm.Show()
         Dim btn As Button = CType(sender, Button)
-        Dim productId As String = btn.Tag.ToString()
+        productId = btn.Tag.ToString()
 
         Dim conn As New SqlClient.SqlConnection
         conn.ConnectionString = "server=R3COM8;user id=sa;password=sqlpassword123;Database=sample;"
@@ -345,5 +366,9 @@ Public Class Products
             MsgBox("Something went wrong. Please try again later!")
         End Try
 
+    End Sub
+
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+        Exporter.ExportToExcel()
     End Sub
 End Class

@@ -65,6 +65,7 @@ Partial Class Products
         Me.searchFilter = New System.Windows.Forms.TextBox()
         Me.flowLayout1 = New System.Windows.Forms.FlowLayoutPanel()
         Me.productPane = New System.Windows.Forms.Panel()
+        Me.Button3 = New System.Windows.Forms.Button()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
@@ -136,6 +137,8 @@ Partial Class Products
         Me.userTable = New System.Windows.Forms.DataGridView()
         Me.Label17 = New System.Windows.Forms.Label()
         Me.Label30 = New System.Windows.Forms.Label()
+        Me.Button4 = New System.Windows.Forms.Button()
+        Me.Label36 = New System.Windows.Forms.Label()
         Me.usersTab.SuspendLayout()
         Me.prdTab.SuspendLayout()
         Me.editProductForm.SuspendLayout()
@@ -198,6 +201,7 @@ Partial Class Products
         'prdTab
         '
         Me.prdTab.BackColor = System.Drawing.Color.AliceBlue
+        Me.prdTab.Controls.Add(Me.Button4)
         Me.prdTab.Controls.Add(Me.editProductForm)
         Me.prdTab.Controls.Add(Me.Button7)
         Me.prdTab.Controls.Add(Me.addProductForm)
@@ -672,6 +676,8 @@ Partial Class Products
         'productPane
         '
         Me.productPane.BackColor = System.Drawing.Color.White
+        Me.productPane.Controls.Add(Me.Label36)
+        Me.productPane.Controls.Add(Me.Button3)
         Me.productPane.Controls.Add(Me.Label11)
         Me.productPane.Controls.Add(Me.Label10)
         Me.productPane.Controls.Add(Me.Label9)
@@ -686,6 +692,23 @@ Partial Class Products
         Me.productPane.Name = "productPane"
         Me.productPane.Size = New System.Drawing.Size(304, 478)
         Me.productPane.TabIndex = 0
+        '
+        'Button3
+        '
+        Me.Button3.BackColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(2, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.Button3.CausesValidation = False
+        Me.Button3.FlatAppearance.BorderSize = 0
+        Me.Button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(2, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button3.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button3.ForeColor = System.Drawing.Color.White
+        Me.Button3.Location = New System.Drawing.Point(17, 429)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(129, 35)
+        Me.Button3.TabIndex = 11
+        Me.Button3.Text = "DELETE"
+        Me.Button3.UseVisualStyleBackColor = False
         '
         'Label11
         '
@@ -730,7 +753,7 @@ Partial Class Products
         Me.deleteBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.deleteBtn.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.deleteBtn.ForeColor = System.Drawing.Color.White
-        Me.deleteBtn.Location = New System.Drawing.Point(175, 416)
+        Me.deleteBtn.Location = New System.Drawing.Point(162, 429)
         Me.deleteBtn.Name = "deleteBtn"
         Me.deleteBtn.Size = New System.Drawing.Size(129, 35)
         Me.deleteBtn.TabIndex = 7
@@ -1510,6 +1533,34 @@ Partial Class Products
         Me.Label30.TabIndex = 24
         Me.Label30.Text = resources.GetString("Label30.Text")
         '
+        'Button4
+        '
+        Me.Button4.BackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(158, Byte), Integer))
+        Me.Button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.Button4.CausesValidation = False
+        Me.Button4.FlatAppearance.BorderSize = 0
+        Me.Button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(2, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button4.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button4.ForeColor = System.Drawing.Color.White
+        Me.Button4.Location = New System.Drawing.Point(462, 69)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(129, 35)
+        Me.Button4.TabIndex = 24
+        Me.Button4.Text = "EXPORT"
+        Me.Button4.UseVisualStyleBackColor = False
+        '
+        'Label36
+        '
+        Me.Label36.AutoSize = True
+        Me.Label36.Font = New System.Drawing.Font("Century Gothic", 9.75!)
+        Me.Label36.ForeColor = System.Drawing.Color.DimGray
+        Me.Label36.Location = New System.Drawing.Point(17, 251)
+        Me.Label36.Name = "Label36"
+        Me.Label36.Size = New System.Drawing.Size(45, 17)
+        Me.Label36.TabIndex = 12
+        Me.Label36.Text = "Code"
+        '
         'Products
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1703,5 +1754,8 @@ Partial Class Products
     Friend WithEvents Label34 As System.Windows.Forms.Label
     Friend WithEvents Label35 As System.Windows.Forms.Label
     Friend WithEvents PictureBox5 As System.Windows.Forms.PictureBox
+    Friend WithEvents Button3 As System.Windows.Forms.Button
+    Friend WithEvents Button4 As System.Windows.Forms.Button
+    Friend WithEvents Label36 As System.Windows.Forms.Label
 
 End Class

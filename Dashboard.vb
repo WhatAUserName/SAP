@@ -32,7 +32,6 @@ Public Class Dashboard
 
         AddHandler homeTabPane.Click, AddressOf homeTabPane_Click
         AddHandler userTabPane.Click, AddressOf userTabPane_Click
-        AddHandler productsTabPane.Click, AddressOf productsTabPane_Click
 
         username.Text = _userSession.Name
         homeTabPane.BackColor = Color.AliceBlue
