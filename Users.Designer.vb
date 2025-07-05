@@ -1,9 +1,8 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-<Global.System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1726")> _
-Partial Class Dashboard
-    Inherits System.Windows.Forms.Form
+Partial Class Users
+    Inherits System.Windows.Forms.UserControl
 
-    'Form overrides dispose to clean up the component list.
+    'UserControl overrides dispose to clean up the component list.
     <System.Diagnostics.DebuggerNonUserCode()> _
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
@@ -23,58 +22,7 @@ Partial Class Dashboard
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Dashboard))
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.flowLayout = New System.Windows.Forms.FlowLayoutPanel()
-        Me.productPane = New System.Windows.Forms.Panel()
-        Me.nameProd = New System.Windows.Forms.Label()
-        Me.description = New System.Windows.Forms.Label()
-        Me.Button11 = New System.Windows.Forms.Button()
-        Me.Button10 = New System.Windows.Forms.Button()
-        Me.price = New System.Windows.Forms.Label()
-        Me.quantity = New System.Windows.Forms.Label()
-        Me.code = New System.Windows.Forms.Label()
-        Me.PictureBox14 = New System.Windows.Forms.PictureBox()
-        Me.logoutTabPane = New System.Windows.Forms.Panel()
-        Me.PictureBox11 = New System.Windows.Forms.PictureBox()
-        Me.Logout = New System.Windows.Forms.Label()
-        Me.Label31 = New System.Windows.Forms.Label()
-        Me.categoryTabPane = New System.Windows.Forms.Panel()
-        Me.PictureBox5 = New System.Windows.Forms.PictureBox()
-        Me.Logo = New System.Windows.Forms.Label()
-        Me.productsTabPane = New System.Windows.Forms.Panel()
-        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.userTabPane = New System.Windows.Forms.Panel()
-        Me.userTabPic = New System.Windows.Forms.PictureBox()
-        Me.userTabLabel = New System.Windows.Forms.Label()
-        Me.homeTabPane = New System.Windows.Forms.Panel()
-        Me.homeTabPic = New System.Windows.Forms.PictureBox()
-        Me.homeTabLabel = New System.Windows.Forms.Label()
-        Me.gap = New System.Windows.Forms.Panel()
-        Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
-        Me.Panel7 = New System.Windows.Forms.Panel()
-        Me.PictureBox10 = New System.Windows.Forms.PictureBox()
-        Me.username = New System.Windows.Forms.Label()
-        Me.profImage = New System.Windows.Forms.PictureBox()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.prodName = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.Panel9 = New System.Windows.Forms.Panel()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.PictureBox7 = New System.Windows.Forms.PictureBox()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.Panel10 = New System.Windows.Forms.Panel()
-        Me.PictureBox8 = New System.Windows.Forms.PictureBox()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.Panel11 = New System.Windows.Forms.Panel()
-        Me.Label12 = New System.Windows.Forms.Label()
-        Me.PictureBox9 = New System.Windows.Forms.PictureBox()
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.dashboardTab = New System.Windows.Forms.Panel()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Users))
         Me.Label30 = New System.Windows.Forms.Label()
         Me.Label17 = New System.Windows.Forms.Label()
         Me.userTable = New System.Windows.Forms.DataGridView()
@@ -134,33 +82,6 @@ Partial Class Dashboard
         Me.Label28 = New System.Windows.Forms.Label()
         Me.Label = New System.Windows.Forms.Label()
         Me.usersTab = New System.Windows.Forms.Panel()
-        Me.mainPanel = New System.Windows.Forms.Panel()
-        Me.Panel1.SuspendLayout()
-        Me.flowLayout.SuspendLayout()
-        Me.productPane.SuspendLayout()
-        CType(Me.PictureBox14, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.logoutTabPane.SuspendLayout()
-        CType(Me.PictureBox11, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.categoryTabPane.SuspendLayout()
-        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.productsTabPane.SuspendLayout()
-        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.userTabPane.SuspendLayout()
-        CType(Me.userTabPic, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.homeTabPane.SuspendLayout()
-        CType(Me.homeTabPic, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel2.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel7.SuspendLayout()
-        CType(Me.PictureBox10, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.profImage, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel9.SuspendLayout()
-        CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel10.SuspendLayout()
-        CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel11.SuspendLayout()
-        CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.dashboardTab.SuspendLayout()
         CType(Me.userTable, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.addUserFormPane.SuspendLayout()
         Me.Panel13.SuspendLayout()
@@ -181,595 +102,6 @@ Partial Class Dashboard
         Me.deleteModal.SuspendLayout()
         Me.usersTab.SuspendLayout()
         Me.SuspendLayout()
-        '
-        'Panel1
-        '
-        Me.Panel1.AllowDrop = True
-        Me.Panel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.Panel1.BackColor = System.Drawing.Color.White
-        Me.Panel1.Controls.Add(Me.flowLayout)
-        Me.Panel1.Controls.Add(Me.logoutTabPane)
-        Me.Panel1.Controls.Add(Me.Label31)
-        Me.Panel1.Controls.Add(Me.categoryTabPane)
-        Me.Panel1.Controls.Add(Me.productsTabPane)
-        Me.Panel1.Controls.Add(Me.userTabPane)
-        Me.Panel1.Controls.Add(Me.homeTabPane)
-        Me.Panel1.Controls.Add(Me.gap)
-        Me.Panel1.Controls.Add(Me.Panel2)
-        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel1.Location = New System.Drawing.Point(0, 0)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(250, 800)
-        Me.Panel1.TabIndex = 8
-        '
-        'flowLayout
-        '
-        Me.flowLayout.Controls.Add(Me.productPane)
-        Me.flowLayout.Location = New System.Drawing.Point(273, 336)
-        Me.flowLayout.Name = "flowLayout"
-        Me.flowLayout.Size = New System.Drawing.Size(798, 346)
-        Me.flowLayout.TabIndex = 49
-        '
-        'productPane
-        '
-        Me.productPane.BackColor = System.Drawing.Color.White
-        Me.productPane.Controls.Add(Me.nameProd)
-        Me.productPane.Controls.Add(Me.description)
-        Me.productPane.Controls.Add(Me.Button11)
-        Me.productPane.Controls.Add(Me.Button10)
-        Me.productPane.Controls.Add(Me.price)
-        Me.productPane.Controls.Add(Me.quantity)
-        Me.productPane.Controls.Add(Me.code)
-        Me.productPane.Controls.Add(Me.PictureBox14)
-        Me.productPane.Location = New System.Drawing.Point(3, 3)
-        Me.productPane.Name = "productPane"
-        Me.productPane.Size = New System.Drawing.Size(259, 412)
-        Me.productPane.TabIndex = 0
-        '
-        'nameProd
-        '
-        Me.nameProd.AutoSize = True
-        Me.nameProd.Font = New System.Drawing.Font("Century Gothic", 10.0!)
-        Me.nameProd.ForeColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(2, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.nameProd.Location = New System.Drawing.Point(14, 217)
-        Me.nameProd.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.nameProd.Name = "nameProd"
-        Me.nameProd.Size = New System.Drawing.Size(51, 19)
-        Me.nameProd.TabIndex = 28
-        Me.nameProd.Text = "Name"
-        '
-        'description
-        '
-        Me.description.AutoSize = True
-        Me.description.Font = New System.Drawing.Font("Century Gothic", 10.0!)
-        Me.description.ForeColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(2, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.description.Location = New System.Drawing.Point(14, 297)
-        Me.description.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.description.Name = "description"
-        Me.description.Size = New System.Drawing.Size(85, 19)
-        Me.description.TabIndex = 27
-        Me.description.Text = "Description"
-        '
-        'Button11
-        '
-        Me.Button11.BackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.Button11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.Button11.CausesValidation = False
-        Me.Button11.FlatAppearance.BorderSize = 0
-        Me.Button11.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(2, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button11.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button11.ForeColor = System.Drawing.Color.White
-        Me.Button11.Location = New System.Drawing.Point(139, 367)
-        Me.Button11.Name = "Button11"
-        Me.Button11.Size = New System.Drawing.Size(105, 35)
-        Me.Button11.TabIndex = 26
-        Me.Button11.Text = "CREATE"
-        Me.Button11.UseVisualStyleBackColor = False
-        '
-        'Button10
-        '
-        Me.Button10.BackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.Button10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.Button10.CausesValidation = False
-        Me.Button10.FlatAppearance.BorderSize = 0
-        Me.Button10.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(2, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button10.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button10.ForeColor = System.Drawing.Color.White
-        Me.Button10.Location = New System.Drawing.Point(18, 367)
-        Me.Button10.Name = "Button10"
-        Me.Button10.Size = New System.Drawing.Size(105, 35)
-        Me.Button10.TabIndex = 25
-        Me.Button10.Text = "CREATE"
-        Me.Button10.UseVisualStyleBackColor = False
-        '
-        'price
-        '
-        Me.price.AutoSize = True
-        Me.price.Font = New System.Drawing.Font("Century Gothic", 10.0!)
-        Me.price.ForeColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(2, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.price.Location = New System.Drawing.Point(204, 218)
-        Me.price.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.price.Name = "price"
-        Me.price.Size = New System.Drawing.Size(42, 19)
-        Me.price.TabIndex = 5
-        Me.price.Text = "Price"
-        '
-        'quantity
-        '
-        Me.quantity.AutoSize = True
-        Me.quantity.Font = New System.Drawing.Font("Century Gothic", 10.0!)
-        Me.quantity.ForeColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(2, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.quantity.Location = New System.Drawing.Point(14, 260)
-        Me.quantity.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.quantity.Name = "quantity"
-        Me.quantity.Size = New System.Drawing.Size(70, 19)
-        Me.quantity.TabIndex = 4
-        Me.quantity.Text = "Quantity"
-        '
-        'code
-        '
-        Me.code.AutoSize = True
-        Me.code.Font = New System.Drawing.Font("Century Gothic", 10.0!)
-        Me.code.ForeColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(2, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.code.Location = New System.Drawing.Point(188, 16)
-        Me.code.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.code.Name = "code"
-        Me.code.Size = New System.Drawing.Size(0, 19)
-        Me.code.TabIndex = 3
-        '
-        'PictureBox14
-        '
-        Me.PictureBox14.Location = New System.Drawing.Point(13, 8)
-        Me.PictureBox14.Name = "PictureBox14"
-        Me.PictureBox14.Size = New System.Drawing.Size(234, 188)
-        Me.PictureBox14.TabIndex = 0
-        Me.PictureBox14.TabStop = False
-        '
-        'logoutTabPane
-        '
-        Me.logoutTabPane.Controls.Add(Me.PictureBox11)
-        Me.logoutTabPane.Controls.Add(Me.Logout)
-        Me.logoutTabPane.Dock = System.Windows.Forms.DockStyle.Top
-        Me.logoutTabPane.Font = New System.Drawing.Font("Wingdings", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(2, Byte))
-        Me.logoutTabPane.ForeColor = System.Drawing.Color.Red
-        Me.logoutTabPane.Location = New System.Drawing.Point(0, 432)
-        Me.logoutTabPane.Margin = New System.Windows.Forms.Padding(4, 77, 4, 77)
-        Me.logoutTabPane.Name = "logoutTabPane"
-        Me.logoutTabPane.Size = New System.Drawing.Size(250, 77)
-        Me.logoutTabPane.TabIndex = 48
-        '
-        'PictureBox11
-        '
-        Me.PictureBox11.Image = CType(resources.GetObject("PictureBox11.Image"), System.Drawing.Image)
-        Me.PictureBox11.Location = New System.Drawing.Point(44, 29)
-        Me.PictureBox11.Name = "PictureBox11"
-        Me.PictureBox11.Size = New System.Drawing.Size(26, 22)
-        Me.PictureBox11.TabIndex = 1
-        Me.PictureBox11.TabStop = False
-        '
-        'Logout
-        '
-        Me.Logout.AutoSize = True
-        Me.Logout.Font = New System.Drawing.Font("Century Gothic", 10.0!)
-        Me.Logout.ForeColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(2, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Logout.Location = New System.Drawing.Point(77, 30)
-        Me.Logout.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Logout.Name = "Logout"
-        Me.Logout.Size = New System.Drawing.Size(56, 19)
-        Me.Logout.TabIndex = 0
-        Me.Logout.Text = "Logout"
-        '
-        'Label31
-        '
-        Me.Label31.AutoSize = True
-        Me.Label31.BackColor = System.Drawing.Color.Transparent
-        Me.Label31.Font = New System.Drawing.Font("Century Gothic", 9.75!)
-        Me.Label31.ForeColor = System.Drawing.Color.DarkGray
-        Me.Label31.Location = New System.Drawing.Point(12, 774)
-        Me.Label31.Name = "Label31"
-        Me.Label31.Size = New System.Drawing.Size(51, 17)
-        Me.Label31.TabIndex = 47
-        Me.Label31.Text = "SAP V1"
-        '
-        'categoryTabPane
-        '
-        Me.categoryTabPane.Controls.Add(Me.PictureBox5)
-        Me.categoryTabPane.Controls.Add(Me.Logo)
-        Me.categoryTabPane.Dock = System.Windows.Forms.DockStyle.Top
-        Me.categoryTabPane.Font = New System.Drawing.Font("Wingdings", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(2, Byte))
-        Me.categoryTabPane.ForeColor = System.Drawing.Color.Red
-        Me.categoryTabPane.Location = New System.Drawing.Point(0, 355)
-        Me.categoryTabPane.Margin = New System.Windows.Forms.Padding(4, 77, 4, 77)
-        Me.categoryTabPane.Name = "categoryTabPane"
-        Me.categoryTabPane.Size = New System.Drawing.Size(250, 77)
-        Me.categoryTabPane.TabIndex = 13
-        '
-        'PictureBox5
-        '
-        Me.PictureBox5.Image = CType(resources.GetObject("PictureBox5.Image"), System.Drawing.Image)
-        Me.PictureBox5.Location = New System.Drawing.Point(44, 29)
-        Me.PictureBox5.Name = "PictureBox5"
-        Me.PictureBox5.Size = New System.Drawing.Size(26, 22)
-        Me.PictureBox5.TabIndex = 1
-        Me.PictureBox5.TabStop = False
-        '
-        'Logo
-        '
-        Me.Logo.AutoSize = True
-        Me.Logo.Font = New System.Drawing.Font("Century Gothic", 10.0!)
-        Me.Logo.ForeColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(2, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Logo.Location = New System.Drawing.Point(77, 30)
-        Me.Logo.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Logo.Name = "Logo"
-        Me.Logo.Size = New System.Drawing.Size(74, 19)
-        Me.Logo.TabIndex = 0
-        Me.Logo.Text = "Category"
-        '
-        'productsTabPane
-        '
-        Me.productsTabPane.Controls.Add(Me.PictureBox4)
-        Me.productsTabPane.Controls.Add(Me.Label3)
-        Me.productsTabPane.Dock = System.Windows.Forms.DockStyle.Top
-        Me.productsTabPane.Font = New System.Drawing.Font("Wingdings", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(2, Byte))
-        Me.productsTabPane.ForeColor = System.Drawing.Color.Red
-        Me.productsTabPane.Location = New System.Drawing.Point(0, 278)
-        Me.productsTabPane.Margin = New System.Windows.Forms.Padding(4, 77, 4, 77)
-        Me.productsTabPane.Name = "productsTabPane"
-        Me.productsTabPane.Size = New System.Drawing.Size(250, 77)
-        Me.productsTabPane.TabIndex = 12
-        '
-        'PictureBox4
-        '
-        Me.PictureBox4.Image = CType(resources.GetObject("PictureBox4.Image"), System.Drawing.Image)
-        Me.PictureBox4.Location = New System.Drawing.Point(44, 29)
-        Me.PictureBox4.Name = "PictureBox4"
-        Me.PictureBox4.Size = New System.Drawing.Size(26, 22)
-        Me.PictureBox4.TabIndex = 1
-        Me.PictureBox4.TabStop = False
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Century Gothic", 10.0!)
-        Me.Label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(2, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Label3.Location = New System.Drawing.Point(77, 30)
-        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(68, 19)
-        Me.Label3.TabIndex = 0
-        Me.Label3.Text = "Products"
-        '
-        'userTabPane
-        '
-        Me.userTabPane.Controls.Add(Me.userTabPic)
-        Me.userTabPane.Controls.Add(Me.userTabLabel)
-        Me.userTabPane.Dock = System.Windows.Forms.DockStyle.Top
-        Me.userTabPane.Font = New System.Drawing.Font("Wingdings", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(2, Byte))
-        Me.userTabPane.ForeColor = System.Drawing.Color.Red
-        Me.userTabPane.Location = New System.Drawing.Point(0, 201)
-        Me.userTabPane.Margin = New System.Windows.Forms.Padding(4, 77, 4, 77)
-        Me.userTabPane.Name = "userTabPane"
-        Me.userTabPane.Size = New System.Drawing.Size(250, 77)
-        Me.userTabPane.TabIndex = 11
-        '
-        'userTabPic
-        '
-        Me.userTabPic.Image = CType(resources.GetObject("userTabPic.Image"), System.Drawing.Image)
-        Me.userTabPic.Location = New System.Drawing.Point(44, 22)
-        Me.userTabPic.Name = "userTabPic"
-        Me.userTabPic.Size = New System.Drawing.Size(26, 22)
-        Me.userTabPic.TabIndex = 3
-        Me.userTabPic.TabStop = False
-        '
-        'userTabLabel
-        '
-        Me.userTabLabel.AutoSize = True
-        Me.userTabLabel.Font = New System.Drawing.Font("Century Gothic", 10.0!)
-        Me.userTabLabel.ForeColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(2, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.userTabLabel.Location = New System.Drawing.Point(77, 23)
-        Me.userTabLabel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.userTabLabel.Name = "userTabLabel"
-        Me.userTabLabel.Size = New System.Drawing.Size(41, 19)
-        Me.userTabLabel.TabIndex = 2
-        Me.userTabLabel.Text = "Users"
-        '
-        'homeTabPane
-        '
-        Me.homeTabPane.Controls.Add(Me.homeTabPic)
-        Me.homeTabPane.Controls.Add(Me.homeTabLabel)
-        Me.homeTabPane.Dock = System.Windows.Forms.DockStyle.Top
-        Me.homeTabPane.Font = New System.Drawing.Font("Wingdings", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(2, Byte))
-        Me.homeTabPane.ForeColor = System.Drawing.Color.Red
-        Me.homeTabPane.Location = New System.Drawing.Point(0, 124)
-        Me.homeTabPane.Margin = New System.Windows.Forms.Padding(4, 77, 4, 77)
-        Me.homeTabPane.Name = "homeTabPane"
-        Me.homeTabPane.Size = New System.Drawing.Size(250, 77)
-        Me.homeTabPane.TabIndex = 10
-        '
-        'homeTabPic
-        '
-        Me.homeTabPic.Image = CType(resources.GetObject("homeTabPic.Image"), System.Drawing.Image)
-        Me.homeTabPic.Location = New System.Drawing.Point(44, 26)
-        Me.homeTabPic.Name = "homeTabPic"
-        Me.homeTabPic.Size = New System.Drawing.Size(26, 22)
-        Me.homeTabPic.TabIndex = 1
-        Me.homeTabPic.TabStop = False
-        '
-        'homeTabLabel
-        '
-        Me.homeTabLabel.AutoSize = True
-        Me.homeTabLabel.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.homeTabLabel.ForeColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(2, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.homeTabLabel.Location = New System.Drawing.Point(78, 31)
-        Me.homeTabLabel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.homeTabLabel.Name = "homeTabLabel"
-        Me.homeTabLabel.Size = New System.Drawing.Size(47, 17)
-        Me.homeTabLabel.TabIndex = 0
-        Me.homeTabLabel.Text = "Home"
-        '
-        'gap
-        '
-        Me.gap.Dock = System.Windows.Forms.DockStyle.Top
-        Me.gap.Location = New System.Drawing.Point(0, 75)
-        Me.gap.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.gap.Name = "gap"
-        Me.gap.Size = New System.Drawing.Size(250, 49)
-        Me.gap.TabIndex = 9
-        '
-        'Panel2
-        '
-        Me.Panel2.Controls.Add(Me.PictureBox1)
-        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel2.Location = New System.Drawing.Point(0, 0)
-        Me.Panel2.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(250, 75)
-        Me.Panel2.TabIndex = 0
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(58, 5)
-        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(134, 65)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox1.TabIndex = 0
-        Me.PictureBox1.TabStop = False
-        '
-        'FlowLayoutPanel1
-        '
-        Me.FlowLayoutPanel1.Location = New System.Drawing.Point(1608, 402)
-        Me.FlowLayoutPanel1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
-        Me.FlowLayoutPanel1.Size = New System.Drawing.Size(12, 12)
-        Me.FlowLayoutPanel1.TabIndex = 9
-        '
-        'Panel7
-        '
-        Me.Panel7.Controls.Add(Me.PictureBox10)
-        Me.Panel7.Controls.Add(Me.username)
-        Me.Panel7.Controls.Add(Me.profImage)
-        Me.Panel7.Controls.Add(Me.Label5)
-        Me.Panel7.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel7.Location = New System.Drawing.Point(250, 0)
-        Me.Panel7.Name = "Panel7"
-        Me.Panel7.Size = New System.Drawing.Size(950, 75)
-        Me.Panel7.TabIndex = 10
-        '
-        'PictureBox10
-        '
-        Me.PictureBox10.Image = CType(resources.GetObject("PictureBox10.Image"), System.Drawing.Image)
-        Me.PictureBox10.Location = New System.Drawing.Point(877, 25)
-        Me.PictureBox10.Name = "PictureBox10"
-        Me.PictureBox10.Size = New System.Drawing.Size(27, 21)
-        Me.PictureBox10.TabIndex = 4
-        Me.PictureBox10.TabStop = False
-        '
-        'username
-        '
-        Me.username.AutoEllipsis = True
-        Me.username.Font = New System.Drawing.Font("Century Gothic", 10.0!)
-        Me.username.ForeColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(2, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.username.Location = New System.Drawing.Point(714, 25)
-        Me.username.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.username.MaximumSize = New System.Drawing.Size(150, 20)
-        Me.username.MinimumSize = New System.Drawing.Size(40, 20)
-        Me.username.Name = "username"
-        Me.username.Size = New System.Drawing.Size(99, 20)
-        Me.username.TabIndex = 3
-        Me.username.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'profImage
-        '
-        Me.profImage.Image = CType(resources.GetObject("profImage.Image"), System.Drawing.Image)
-        Me.profImage.Location = New System.Drawing.Point(820, 14)
-        Me.profImage.Name = "profImage"
-        Me.profImage.Size = New System.Drawing.Size(51, 42)
-        Me.profImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.profImage.TabIndex = 2
-        Me.profImage.TabStop = False
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Century Gothic", 10.0!)
-        Me.Label5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(2, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Label5.Location = New System.Drawing.Point(583, 24)
-        Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(109, 19)
-        Me.Label5.TabIndex = 1
-        Me.Label5.Text = "Good Morning"
-        '
-        'prodName
-        '
-        Me.prodName.Location = New System.Drawing.Point(0, 0)
-        Me.prodName.Name = "prodName"
-        Me.prodName.Size = New System.Drawing.Size(100, 23)
-        Me.prodName.TabIndex = 0
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Century Gothic", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.ForeColor = System.Drawing.Color.Red
-        Me.Label6.Location = New System.Drawing.Point(48, 35)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(186, 38)
-        Me.Label6.TabIndex = 0
-        Me.Label6.Text = "Dashboard"
-        '
-        'Panel9
-        '
-        Me.Panel9.BackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.Panel9.Controls.Add(Me.Label7)
-        Me.Panel9.Controls.Add(Me.PictureBox7)
-        Me.Panel9.Controls.Add(Me.Label8)
-        Me.Panel9.Location = New System.Drawing.Point(55, 111)
-        Me.Panel9.Name = "Panel9"
-        Me.Panel9.Size = New System.Drawing.Size(263, 143)
-        Me.Panel9.TabIndex = 1
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.BackColor = System.Drawing.Color.Transparent
-        Me.Label7.Font = New System.Drawing.Font("Century Gothic", 36.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.ForeColor = System.Drawing.Color.White
-        Me.Label7.Location = New System.Drawing.Point(137, 71)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(105, 56)
-        Me.Label7.TabIndex = 7
-        Me.Label7.Text = "500"
-        '
-        'PictureBox7
-        '
-        Me.PictureBox7.Image = CType(resources.GetObject("PictureBox7.Image"), System.Drawing.Image)
-        Me.PictureBox7.Location = New System.Drawing.Point(19, 15)
-        Me.PictureBox7.Name = "PictureBox7"
-        Me.PictureBox7.Size = New System.Drawing.Size(48, 44)
-        Me.PictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
-        Me.PictureBox7.TabIndex = 5
-        Me.PictureBox7.TabStop = False
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Font = New System.Drawing.Font("Century Gothic", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.ForeColor = System.Drawing.Color.White
-        Me.Label8.Location = New System.Drawing.Point(74, 26)
-        Me.Label8.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(71, 25)
-        Me.Label8.TabIndex = 4
-        Me.Label8.Text = "USERS"
-        '
-        'Panel10
-        '
-        Me.Panel10.BackColor = System.Drawing.Color.FromArgb(CType(CType(158, Byte), Integer), CType(CType(155, Byte), Integer), CType(CType(54, Byte), Integer))
-        Me.Panel10.Controls.Add(Me.PictureBox8)
-        Me.Panel10.Controls.Add(Me.Label9)
-        Me.Panel10.Controls.Add(Me.Label10)
-        Me.Panel10.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Panel10.Location = New System.Drawing.Point(333, 111)
-        Me.Panel10.Name = "Panel10"
-        Me.Panel10.Size = New System.Drawing.Size(263, 143)
-        Me.Panel10.TabIndex = 2
-        '
-        'PictureBox8
-        '
-        Me.PictureBox8.Image = CType(resources.GetObject("PictureBox8.Image"), System.Drawing.Image)
-        Me.PictureBox8.Location = New System.Drawing.Point(16, 12)
-        Me.PictureBox8.Name = "PictureBox8"
-        Me.PictureBox8.Size = New System.Drawing.Size(48, 44)
-        Me.PictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
-        Me.PictureBox8.TabIndex = 8
-        Me.PictureBox8.TabStop = False
-        '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.BackColor = System.Drawing.Color.Transparent
-        Me.Label9.Font = New System.Drawing.Font("Century Gothic", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.ForeColor = System.Drawing.Color.White
-        Me.Label9.Location = New System.Drawing.Point(71, 23)
-        Me.Label9.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(143, 25)
-        Me.Label9.TabIndex = 7
-        Me.Label9.Text = "NEW ORDERS"
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.Font = New System.Drawing.Font("Century Gothic", 36.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.ForeColor = System.Drawing.Color.White
-        Me.Label10.Location = New System.Drawing.Point(105, 71)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(145, 56)
-        Me.Label10.TabIndex = 6
-        Me.Label10.Text = "2,000"
-        '
-        'Panel11
-        '
-        Me.Panel11.BackColor = System.Drawing.Color.FromArgb(CType(CType(229, Byte), Integer), CType(CType(84, Byte), Integer), CType(CType(81, Byte), Integer))
-        Me.Panel11.Controls.Add(Me.Label12)
-        Me.Panel11.Controls.Add(Me.PictureBox9)
-        Me.Panel11.Controls.Add(Me.Label11)
-        Me.Panel11.Location = New System.Drawing.Point(608, 111)
-        Me.Panel11.Name = "Panel11"
-        Me.Panel11.Size = New System.Drawing.Size(263, 143)
-        Me.Panel11.TabIndex = 2
-        '
-        'Label12
-        '
-        Me.Label12.AutoSize = True
-        Me.Label12.Font = New System.Drawing.Font("Century Gothic", 36.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.ForeColor = System.Drawing.Color.White
-        Me.Label12.Location = New System.Drawing.Point(141, 71)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(105, 56)
-        Me.Label12.TabIndex = 9
-        Me.Label12.Text = "300"
-        '
-        'PictureBox9
-        '
-        Me.PictureBox9.Image = CType(resources.GetObject("PictureBox9.Image"), System.Drawing.Image)
-        Me.PictureBox9.Location = New System.Drawing.Point(16, 12)
-        Me.PictureBox9.Name = "PictureBox9"
-        Me.PictureBox9.Size = New System.Drawing.Size(48, 44)
-        Me.PictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
-        Me.PictureBox9.TabIndex = 8
-        Me.PictureBox9.TabStop = False
-        '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.Font = New System.Drawing.Font("Century Gothic", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.ForeColor = System.Drawing.Color.White
-        Me.Label11.Location = New System.Drawing.Point(71, 23)
-        Me.Label11.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(177, 25)
-        Me.Label11.TabIndex = 7
-        Me.Label11.Text = "Declined Orders"
-        '
-        'dashboardTab
-        '
-        Me.dashboardTab.BackColor = System.Drawing.Color.AliceBlue
-        Me.dashboardTab.Controls.Add(Me.Panel11)
-        Me.dashboardTab.Controls.Add(Me.Panel10)
-        Me.dashboardTab.Controls.Add(Me.Panel9)
-        Me.dashboardTab.Controls.Add(Me.Label6)
-        Me.dashboardTab.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.dashboardTab.Location = New System.Drawing.Point(250, 75)
-        Me.dashboardTab.Name = "dashboardTab"
-        Me.dashboardTab.Size = New System.Drawing.Size(950, 725)
-        Me.dashboardTab.TabIndex = 13
         '
         'Label30
         '
@@ -1090,7 +422,7 @@ Partial Class Dashboard
         Me.addDateOfBirth.CalendarTrailingForeColor = System.Drawing.SystemColors.ControlText
         Me.addDateOfBirth.Location = New System.Drawing.Point(13, 5)
         Me.addDateOfBirth.Name = "addDateOfBirth"
-        Me.addDateOfBirth.Size = New System.Drawing.Size(334, 26)
+        Me.addDateOfBirth.Size = New System.Drawing.Size(334, 20)
         Me.addDateOfBirth.TabIndex = 21
         '
         'editUserFormPane
@@ -1145,7 +477,7 @@ Partial Class Dashboard
         Me.editUserBirthday.CalendarTrailingForeColor = System.Drawing.SystemColors.ControlText
         Me.editUserBirthday.Location = New System.Drawing.Point(13, 5)
         Me.editUserBirthday.Name = "editUserBirthday"
-        Me.editUserBirthday.Size = New System.Drawing.Size(334, 26)
+        Me.editUserBirthday.Size = New System.Drawing.Size(334, 20)
         Me.editUserBirthday.TabIndex = 21
         '
         'Panel15
@@ -1409,6 +741,7 @@ Partial Class Dashboard
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(89, 35)
         Me.Button2.TabIndex = 16
+        Me.Button2.Tag = "productId"
         Me.Button2.Text = "YES"
         Me.Button2.UseVisualStyleBackColor = False
         '
@@ -1449,7 +782,6 @@ Partial Class Dashboard
         '
         Me.usersTab.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.usersTab.BackColor = System.Drawing.Color.AliceBlue
-        Me.usersTab.Controls.Add(Me.mainPanel)
         Me.usersTab.Controls.Add(Me.deleteModal)
         Me.usersTab.Controls.Add(Me.editUserFormPane)
         Me.usersTab.Controls.Add(Me.addUserFormPane)
@@ -1458,78 +790,18 @@ Partial Class Dashboard
         Me.usersTab.Controls.Add(Me.Label17)
         Me.usersTab.Controls.Add(Me.Label30)
         Me.usersTab.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.usersTab.Location = New System.Drawing.Point(250, 75)
+        Me.usersTab.Location = New System.Drawing.Point(0, 0)
         Me.usersTab.Name = "usersTab"
         Me.usersTab.Size = New System.Drawing.Size(950, 725)
-        Me.usersTab.TabIndex = 15
+        Me.usersTab.TabIndex = 17
         '
-        'mainPanel
+        'Users
         '
-        Me.mainPanel.AutoSize = True
-        Me.mainPanel.Location = New System.Drawing.Point(0, 0)
-        Me.mainPanel.Name = "mainPanel"
-        Me.mainPanel.Size = New System.Drawing.Size(950, 725)
-        Me.mainPanel.TabIndex = 25
-        '
-        'Dashboard
-        '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
-        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(1200, 800)
+        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
+        Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.Controls.Add(Me.usersTab)
-        Me.Controls.Add(Me.dashboardTab)
-        Me.Controls.Add(Me.Panel7)
-        Me.Controls.Add(Me.FlowLayoutPanel1)
-        Me.Controls.Add(Me.Panel1)
-        Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
-        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.MaximizeBox = False
-        Me.MinimizeBox = False
-        Me.Name = "Dashboard"
-        Me.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide
-        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "LoginForm1"
-        Me.Panel1.ResumeLayout(False)
-        Me.Panel1.PerformLayout()
-        Me.flowLayout.ResumeLayout(False)
-        Me.productPane.ResumeLayout(False)
-        Me.productPane.PerformLayout()
-        CType(Me.PictureBox14, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.logoutTabPane.ResumeLayout(False)
-        Me.logoutTabPane.PerformLayout()
-        CType(Me.PictureBox11, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.categoryTabPane.ResumeLayout(False)
-        Me.categoryTabPane.PerformLayout()
-        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.productsTabPane.ResumeLayout(False)
-        Me.productsTabPane.PerformLayout()
-        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.userTabPane.ResumeLayout(False)
-        Me.userTabPane.PerformLayout()
-        CType(Me.userTabPic, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.homeTabPane.ResumeLayout(False)
-        Me.homeTabPane.PerformLayout()
-        CType(Me.homeTabPic, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Panel2.ResumeLayout(False)
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Panel7.ResumeLayout(False)
-        Me.Panel7.PerformLayout()
-        CType(Me.PictureBox10, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.profImage, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Panel9.ResumeLayout(False)
-        Me.Panel9.PerformLayout()
-        CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Panel10.ResumeLayout(False)
-        Me.Panel10.PerformLayout()
-        CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Panel11.ResumeLayout(False)
-        Me.Panel11.PerformLayout()
-        CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.dashboardTab.ResumeLayout(False)
-        Me.dashboardTab.PerformLayout()
+        Me.Name = "Users"
+        Me.Size = New System.Drawing.Size(950, 725)
         CType(Me.userTable, System.ComponentModel.ISupportInitialize).EndInit()
         Me.addUserFormPane.ResumeLayout(False)
         Me.addUserFormPane.PerformLayout()
@@ -1562,57 +834,6 @@ Partial Class Dashboard
         Me.ResumeLayout(False)
 
     End Sub
-    Friend WithEvents Panel1 As System.Windows.Forms.Panel
-    Friend WithEvents Panel2 As System.Windows.Forms.Panel
-    Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
-    Friend WithEvents homeTabPane As System.Windows.Forms.Panel
-    Friend WithEvents gap As System.Windows.Forms.Panel
-    Friend WithEvents FlowLayoutPanel1 As System.Windows.Forms.FlowLayoutPanel
-    Friend WithEvents homeTabPic As System.Windows.Forms.PictureBox
-    Friend WithEvents productsTabPane As System.Windows.Forms.Panel
-    Friend WithEvents PictureBox4 As System.Windows.Forms.PictureBox
-    Friend WithEvents Label3 As System.Windows.Forms.Label
-    Friend WithEvents userTabPane As System.Windows.Forms.Panel
-    Friend WithEvents categoryTabPane As System.Windows.Forms.Panel
-    Friend WithEvents PictureBox5 As System.Windows.Forms.PictureBox
-    Friend WithEvents Logo As System.Windows.Forms.Label
-    Friend WithEvents Panel7 As System.Windows.Forms.Panel
-    Friend WithEvents profImage As System.Windows.Forms.PictureBox
-    Friend WithEvents Label5 As System.Windows.Forms.Label
-    Friend WithEvents userTabPic As System.Windows.Forms.PictureBox
-    Friend WithEvents userTabLabel As System.Windows.Forms.Label
-    Friend WithEvents homeTabLabel As System.Windows.Forms.Label
-    Friend WithEvents username As System.Windows.Forms.Label
-    Friend WithEvents PictureBox10 As System.Windows.Forms.PictureBox
-    Friend WithEvents Label31 As System.Windows.Forms.Label
-    Friend WithEvents logoutTabPane As System.Windows.Forms.Panel
-    Friend WithEvents PictureBox11 As System.Windows.Forms.PictureBox
-    Friend WithEvents Logout As System.Windows.Forms.Label
-    Friend WithEvents prodName As System.Windows.Forms.Label
-    Friend WithEvents flowLayout As System.Windows.Forms.FlowLayoutPanel
-    Friend WithEvents productPane As System.Windows.Forms.Panel
-    Friend WithEvents nameProd As System.Windows.Forms.Label
-    Friend WithEvents description As System.Windows.Forms.Label
-    Friend WithEvents Button11 As System.Windows.Forms.Button
-    Friend WithEvents Button10 As System.Windows.Forms.Button
-    Friend WithEvents price As System.Windows.Forms.Label
-    Friend WithEvents quantity As System.Windows.Forms.Label
-    Friend WithEvents code As System.Windows.Forms.Label
-    Friend WithEvents PictureBox14 As System.Windows.Forms.PictureBox
-    Friend WithEvents Label6 As System.Windows.Forms.Label
-    Friend WithEvents Panel9 As System.Windows.Forms.Panel
-    Friend WithEvents Label7 As System.Windows.Forms.Label
-    Friend WithEvents PictureBox7 As System.Windows.Forms.PictureBox
-    Friend WithEvents Label8 As System.Windows.Forms.Label
-    Friend WithEvents Panel10 As System.Windows.Forms.Panel
-    Friend WithEvents PictureBox8 As System.Windows.Forms.PictureBox
-    Friend WithEvents Label9 As System.Windows.Forms.Label
-    Friend WithEvents Label10 As System.Windows.Forms.Label
-    Friend WithEvents Panel11 As System.Windows.Forms.Panel
-    Friend WithEvents Label12 As System.Windows.Forms.Label
-    Friend WithEvents PictureBox9 As System.Windows.Forms.PictureBox
-    Friend WithEvents Label11 As System.Windows.Forms.Label
-    Friend WithEvents dashboardTab As System.Windows.Forms.Panel
     Friend WithEvents Label30 As System.Windows.Forms.Label
     Friend WithEvents Label17 As System.Windows.Forms.Label
     Friend WithEvents userTable As System.Windows.Forms.DataGridView
@@ -1672,6 +893,5 @@ Partial Class Dashboard
     Friend WithEvents Label28 As System.Windows.Forms.Label
     Friend WithEvents Label As System.Windows.Forms.Label
     Friend WithEvents usersTab As System.Windows.Forms.Panel
-    Friend WithEvents mainPanel As System.Windows.Forms.Panel
 
 End Class

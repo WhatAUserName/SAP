@@ -7,6 +7,7 @@ Public Class Products
         flowLayout1.Controls.Clear()
         addProductForm.Hide()
         editProductForm.Hide()
+        backdrop.Hide()
         populateProducts()
 
         Dim radius As Integer = 10
@@ -26,7 +27,9 @@ Public Class Products
         conn.ConnectionString = "server=R3COM8;user id=sa;password=sqlpassword123;Database=sample;"
         Try
             conn.Open()
-            Dim query As String = "SELECT c.name AS categ_name, p.* FROM [dbo].[products] AS p INNER JOIN [dbo].[category] AS c ON p.categoryId = c.id"
+
+
+            Dim query As String = "SELECT c.id AS categ_id, c.name AS categ_name, p.id As id, p.code As code, p.name As name, p.price As price, p.quantity As quantity, p.description As description FROM [dbo].[products] AS p INNER JOIN [dbo].[category] AS c ON p.categoryId = c.id"
             Dim cmd As New SqlCommand(query, conn)
             Dim reader = cmd.ExecuteReader()
 
@@ -35,22 +38,53 @@ Public Class Products
             End While
 
         Catch ex As Exception
+            MsgBox(ex.ToString())
             MsgBox("Something went wrong. Please try again later!")
             Return
         End Try
     End Sub
 
     Private Sub searchFilter_TextChanged(sender As Object, e As EventArgs) Handles searchFilter.TextChanged
+        filterAndSorting()
+    End Sub
 
+    Private Sub sortingFilter_SelectedIndexChanged(sender As Object, e As EventArgs) Handles sortingFilter.SelectedIndexChanged
+        filterAndSorting()
+    End Sub
+
+    Private Sub filterAndSorting()
         flowLayout1.Controls.Clear()
 
         Dim conn As New SqlClient.SqlConnection
         conn.ConnectionString = "server=R3COM8;user id=sa;password=sqlpassword123;Database=sample;"
 
         Dim filterQuery = "%" + searchFilter.Text + "%"
+
         Try
             conn.Open()
-            Dim query As String = "SELECT * FROM [dbo].[products] AS p JOIN [dbo].[category] AS c ON p.categoryId = c.id WHERE c.name LIKE @category OR p.code LIKE @code OR p.name LIKE @name OR p.price LIKE @price OR p.quantity LIKE @quantity OR p.description LIKE @description"
+            Dim sort As String
+            Select Case sortingFilter.Text
+                Case "Category Asc"
+                    sort = " ORDER BY c.name ASC"
+                Case "Category Desc"
+                    sort = "ORDER BY c.name DESC"
+                Case "Code Asc"
+                    sort = "ORDER BY p.code ASC"
+                Case "Code Desc"
+                    sort = "ORDER BY p.code DESC"
+                Case "Name(Asc)"
+                    sort = "ORDER BY p.name ASC"
+                Case "Name(Desc)"
+                    sort = "ORDER BY p.name DESC"
+                Case "Price Asc"
+                    sort = "ORDER BY p.price ASC"
+                Case "Price Desc"
+                    sort = "ORDER BY p.price DESC"
+                Case Else
+                    sort = ""
+            End Select
+
+            Dim query As String = "SELECT c.id AS categ_id, c.name AS categ_name, p.id As id, p.code As code, p.name As name, p.price As price, p.quantity As quantity, p.description As description FROM [dbo].[products] AS p LEFT JOIN [dbo].[category] AS c ON p.categoryId = c.id WHERE p.name LIKE @category OR p.code LIKE @code OR p.name LIKE @name OR p.price LIKE @price OR p.quantity LIKE @quantity OR p.description LIKE @description " & sort
             Dim cmd As New SqlCommand(query, conn)
             cmd.Parameters.AddWithValue("@category", filterQuery)
             cmd.Parameters.AddWithValue("@code", filterQuery)
@@ -58,45 +92,7 @@ Public Class Products
             cmd.Parameters.AddWithValue("@price", filterQuery)
             cmd.Parameters.AddWithValue("@quantity", filterQuery)
             cmd.Parameters.AddWithValue("@description", filterQuery)
-            Dim reader = cmd.ExecuteReader()
-            While reader.Read()
-                renderComponent(reader)
-            End While
-        Catch ex As Exception
-            MsgBox(ex.ToString())
-        End Try
-    End Sub
-    
-    Private Sub sortingFilter_SelectedIndexChanged(sender As Object, e As EventArgs) Handles sortingFilter.SelectedIndexChanged
-        flowLayout1.Controls.Clear()
 
-        Dim conn As New SqlClient.SqlConnection
-        conn.ConnectionString = "server=R3COM8;user id=sa;password=sqlpassword123;Database=sample;"
-        Try
-            conn.Open()
-            Dim query As String
-            Select Case sortingFilter.Text
-                Case "Category Asc"
-                    query = "SELECT * FROM [dbo].[products] AS p JOIN [dbo].[category] AS c ON p.categoryId = c.id ORDER BY c.name ASC"
-                Case "Category Desc"
-                    query = "SELECT * FROM [dbo].[products] AS p JOIN [dbo].[category] AS c ON p.categoryId = c.id ORDER BY c.name DESC"
-                Case "Code Asc"
-                    query = "SELECT * FROM [dbo].[products] AS p JOIN [dbo].[category] AS c ON p.categoryId = c.id ORDER BY p.code ASC"
-                Case "Code Desc"
-                    query = "SELECT * FROM [dbo].[products] AS p JOIN [dbo].[category] AS c ON p.categoryId = c.id ORDER BY p.code DESC"
-                Case "Name(Asc)"
-                    query = "SELECT * FROM [dbo].[products] AS p JOIN [dbo].[category] AS c ON p.categoryId = c.id ORDER BY p.name ASC"
-                Case "Name(Desc)"
-                    query = "SELECT * FROM [dbo].[products] AS p JOIN [dbo].[category] AS c ON p.categoryId = c.id ORDER BY p.name DESC"
-                Case "Price Asc"
-                    query = "SELECT * FROM [dbo].[products] AS p JOIN [dbo].[category] AS c ON p.categoryId = c.id ORDER BY p.price ASC"
-                Case "Price Desc"
-                    query = "SELECT * FROM [dbo].[products] AS p JOIN [dbo].[category] AS c ON p.categoryId = c.id ORDER BY p.price DESC"
-                Case Else
-                    query = "SELECT * FROM [dbo].[products] AS p JOIN [dbo].[category] AS c ON p.categoryId = c.id ORDER BY p.code ASC"
-            End Select
-
-            Dim cmd As New SqlCommand(query, conn)
             Dim reader = cmd.ExecuteReader()
 
             While reader.Read()
@@ -112,7 +108,7 @@ Public Class Products
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Products))
         ' Creating new pane
         Dim productPane As New Panel()
-        productPane.Width = 304
+        productPane.Width = 265
         productPane.Height = 478
         productPane.BackColor = Color.White
 
@@ -120,34 +116,37 @@ Public Class Products
         Dim code As New Label()
         code.Text = reader("code")
         code.Font = New Font("Century Gothic", 9.75, FontStyle.Bold)
-        code.AutoSize = True
-        code.Location = New Point(232, 24)
+        code.Location = New Point(197, 28)
+        code.AutoEllipsis = True
+        code.Size = New Size(45, 30)
+        code.UseCompatibleTextRendering = True
+        code.TextAlign = ContentAlignment.MiddleRight
         code.ForeColor = Color.DimGray
 
         Dim PictureBox1 = New System.Windows.Forms.PictureBox()
         PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
         PictureBox1.Location = New System.Drawing.Point(14, 15)
         PictureBox1.Name = "PictureBox1"
-        PictureBox1.Size = New System.Drawing.Size(277, 232)
-        PictureBox1.TabIndex = 0
-        PictureBox1.TabStop = False
+        PictureBox1.Size = New System.Drawing.Size(239, 232)
 
         'Category Label
         Dim categoryName As New Label()
         categoryName.Text = reader("categ_name")
         categoryName.Font = New Font("Century Gothic", 9.75)
-        categoryName.AutoSize = True
-        categoryName.Location = New Point(11, 254)
+        categoryName.Location = New Point(17, 253)
         categoryName.ForeColor = Color.DimGray
-       
+        categoryName.UseCompatibleTextRendering = True
+        categoryName.TextAlign = ContentAlignment.MiddleLeft
 
         ' Name label
         Dim nameProd As New Label()
         nameProd.Text = reader("name")
         nameProd.Font = New Font("Century Gothic", 14.25, System.Drawing.FontStyle.Bold)
+        nameProd.Location = New Point(13, 275)
         nameProd.AutoSize = True
-        nameProd.Location = New Point(11, 275)
         nameProd.ForeColor = Color.DimGray
+        nameProd.UseCompatibleTextRendering = True
+        nameProd.TextAlign = ContentAlignment.MiddleLeft
 
         ' Stocks label
         Dim Label8 As New Label()
@@ -156,7 +155,7 @@ Public Class Products
         Label8.ForeColor = System.Drawing.Color.DimGray
         Label8.Location = New System.Drawing.Point(14, 311)
         Label8.Name = "Label8"
-        Label8.Size = New System.Drawing.Size(48, 17)
+        Label8.Size = New System.Drawing.Size(14, 311)
         Label8.TabIndex = 5
         Label8.Text = "Stocks"
 
@@ -193,7 +192,7 @@ Public Class Products
         Label6.AutoSize = True
         Label6.Font = New System.Drawing.Font("Century Gothic", 9.75!)
         Label6.ForeColor = System.Drawing.Color.DimGray
-        Label6.Location = New System.Drawing.Point(224, 271)
+        Label6.Location = New System.Drawing.Point(186, 257)
         Label6.Name = "Label6"
         Label6.Size = New System.Drawing.Size(67, 17)
         Label6.TabIndex = 3
@@ -203,8 +202,10 @@ Public Class Products
         Dim price As New Label()
         price.Text = reader("price")
         price.Font = New Font("Century Gothic", 18, System.Drawing.FontStyle.Bold)
-        price.AutoSize = True
-        price.Location = New Point(207, 295)
+        price.Location = New Point(134, 274)
+        price.Size = New Size(119, 36)
+        price.UseCompatibleTextRendering = True
+        price.TextAlign = ContentAlignment.MiddleRight
         price.ForeColor = Color.DimGray
 
         Dim editBtn = New System.Windows.Forms.Button()
@@ -218,7 +219,7 @@ Public Class Products
         editBtn.ForeColor = System.Drawing.Color.White
         editBtn.Location = New System.Drawing.Point(17, 429)
         editBtn.Name = "Button3"
-        editBtn.Size = New System.Drawing.Size(129, 35)
+        editBtn.Size = New System.Drawing.Size(114, 35)
         editBtn.TabIndex = 6
         editBtn.Text = "EDIT"
         editBtn.UseVisualStyleBackColor = False
@@ -234,9 +235,9 @@ Public Class Products
         deleteBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         deleteBtn.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         deleteBtn.ForeColor = System.Drawing.Color.White
-        deleteBtn.Location = New System.Drawing.Point(162, 429)
+        deleteBtn.Location = New System.Drawing.Point(139, 429)
         deleteBtn.Name = "Button4"
-        deleteBtn.Size = New System.Drawing.Size(129, 35)
+        deleteBtn.Size = New System.Drawing.Size(114, 35)
         deleteBtn.TabIndex = 7
         deleteBtn.Text = "DELETE"
         deleteBtn.UseVisualStyleBackColor = False
@@ -252,7 +253,6 @@ Public Class Products
         productPane.Controls.Add(description)
         productPane.Controls.Add(price)
         productPane.Controls.Add(Label6)
-        'productPane.Controls.Add(Label7)
         productPane.Controls.Add(Label8)
         productPane.Controls.Add(editBtn)
         productPane.Controls.Add(deleteBtn)
@@ -262,7 +262,7 @@ Public Class Products
 
     End Sub
 
-    Private Sub deleteBtn_Click(sender As Object, e As EventArgs) Handles deleteBtn.Click
+    Private Sub deleteBtn_Click(sender As Object, e As EventArgs)
         Dim btn As Button = CType(sender, Button)
         Dim productId As String = btn.Tag.ToString()
 
@@ -283,6 +283,7 @@ Public Class Products
     End Sub
 
     Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
+        backdrop.Show()
         addProductForm.Show()
     End Sub
 
@@ -307,12 +308,13 @@ Public Class Products
         Catch ex As Exception
             MsgBox(ex.ToString(), MsgBoxStyle.Exclamation)
         End Try
-
+        backdrop.Hide()
         addProductForm.Hide()
         populateProducts()
     End Sub
 
     Private Sub Button9_Click(sender As Object, e As EventArgs) Handles Button9.Click
+        backdrop.Hide()
         editProductForm.Hide()
     End Sub
 
@@ -336,12 +338,13 @@ Public Class Products
         Catch ex As Exception
             MsgBox(ex.ToString(), MsgBoxStyle.Exclamation)
         End Try
-
+        backdrop.Hide()
         editProductForm.Hide()
         populateProducts()
     End Sub
 
     Private Sub editBtn_Click(sender As Object, e As EventArgs)
+        backdrop.Show()
         editProductForm.Show()
         Dim btn As Button = CType(sender, Button)
         productId = btn.Tag.ToString()
@@ -370,6 +373,11 @@ Public Class Products
 
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
         Exporter.ExportToExcel()
+    End Sub
+
+    Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
+        backdrop.Hide()
+        addProductForm.Hide()
     End Sub
 
 End Class

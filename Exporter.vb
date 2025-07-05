@@ -32,7 +32,7 @@ Public Class Exporter
                 For col As Integer = 0 To dataTable.Columns.Count - 1
                     workSheet.Cells(row + 2, col + 1) = dataTable.Rows(row)(col).ToString()
                 Next
-                sum = CType(dataTable.Rows(row)(dataTable.Columns.Count - 1), Integer) + sum
+                sum = (CType(dataTable.Rows(row)(2), Integer) * CType(dataTable.Rows(row)(dataTable.Columns.Count - 1), Integer)) + sum
                 workSheet.Cells(row + 3, dataTable.Columns.Count) = sum
             Next
 

@@ -43,7 +43,6 @@ Public Class Login
 
     End Sub
 
-
     Private Sub Cancel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Cancel.Click
         Me.logUsername.Text = ""
         Me.logPass.Text = ""
@@ -55,7 +54,5 @@ Public Class Login
         register.Show()
     End Sub
 
-    Private Sub Login_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-    End Sub
 End Class

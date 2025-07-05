@@ -4111,37 +4111,4 @@
         FEvDIrW0UUTUh0UV/9k=
 </value>
   </data>
-  <data name="PictureBox3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAXpJREFUSEvd
-        lE1KA0EQhSuJO10YEW+jiIJLj+LCnwgSFzmLOUQU/AFPoTcQV0YXmjGM79W8tANJz0zjRn1QkPn6VXWn
-        eqbs/yoz285adpu17c2jZTefHdvXsmvStgvwUbZke0LNhIJ9xBSRL4iBbPQ9lnhfuFp+8qL4O+IkN1tl
-        4LQHYlN4tugFX8HzMWKCyPFPdr1IlbKO3bkZxYWCwE59De0ScoEdiV8JxQXjK808tVAQ2JoXattYyAW+
-        Lv4sFBeTaa7Z4EXIlbZB8ebk7LlQEPisRddCLrBD8foW8VV0c3GhPZyuq5Oz+AeCl7xJL/gyntMumYJ5
-        4IWKjcpBdiYbfQ+ltXPhZuKryFYgkZc+9t86+Uxo4xD8MvlD+5vyL/h79pT7vijSZhMSqmZPXVTPJj95
-        UTzMHl+oED0NZ9NO5eypE3J6njs/m7gJ+YgP0dlTJ+R0vdD8bNoQf+IG3jOtJSuWH3jM0FSx/MBxB/cM
-        8WTF8n9a97fI7AuH5lASEsdQiQAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="PictureBox2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAXpJREFUSEvd
-        lE1KA0EQhSuJO10YEW+jiIJLj+LCnwgSFzmLOUQU/AFPoTcQV0YXmjGM79W8tANJz0zjRn1QkPn6VXWn
-        eqbs/yoz285adpu17c2jZTefHdvXsmvStgvwUbZke0LNhIJ9xBSRL4iBbPQ9lnhfuFp+8qL4O+IkN1tl
-        4LQHYlN4tugFX8HzMWKCyPFPdr1IlbKO3bkZxYWCwE59De0ScoEdiV8JxQXjK808tVAQ2JoXattYyAW+
-        Lv4sFBeTaa7Z4EXIlbZB8ebk7LlQEPisRddCLrBD8foW8VV0c3GhPZyuq5Oz+AeCl7xJL/gyntMumYJ5
-        4IWKjcpBdiYbfQ+ltXPhZuKryFYgkZc+9t86+Uxo4xD8MvlD+5vyL/h79pT7vijSZhMSqmZPXVTPJj95
-        UTzMHl+oED0NZ9NO5eypE3J6njs/m7gJ+YgP0dlTJ+R0vdD8bNoQf+IG3jOtJSuWH3jM0FSx/MBxB/cM
-        8WTF8n9a97fI7AuH5lASEsdQiQAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="Label30.Text" xml:space="preserve">
-    <value>How to navigate this file
-Note: All with (*) asterisk symbol are only 
-Temporary Solution
-
-Creating New user - Click the Create Btn
-*Edit - One click the row you want to edit
-*Deletion - Double Click the row you want to delete</value>
-  </data>
 </root>

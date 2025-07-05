@@ -43,7 +43,7 @@ Partial Class Profile
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
+        Me.OpenFileDialog = New System.Windows.Forms.OpenFileDialog()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.profPicModal = New System.Windows.Forms.Panel()
         Me.Button7 = New System.Windows.Forms.Button()
@@ -52,7 +52,7 @@ Partial Class Profile
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
-        Me.pbMain = New System.Windows.Forms.PictureBox()
+        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
@@ -62,7 +62,7 @@ Partial Class Profile
         Me.Panel3.SuspendLayout()
         Me.Panel4.SuspendLayout()
         Me.profPicModal.SuspendLayout()
-        CType(Me.pbMain, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.backdrop.SuspendLayout()
@@ -275,9 +275,9 @@ Partial Class Profile
         Me.Label6.Size = New System.Drawing.Size(0, 17)
         Me.Label6.TabIndex = 7
         '
-        'OpenFileDialog1
+        'OpenFileDialog
         '
-        Me.OpenFileDialog1.FileName = "UploadImage"
+        Me.OpenFileDialog.FileName = "UploadImage"
         '
         'Label7
         '
@@ -300,7 +300,7 @@ Partial Class Profile
         Me.profPicModal.Controls.Add(Me.Label11)
         Me.profPicModal.Controls.Add(Me.Label10)
         Me.profPicModal.Controls.Add(Me.Label9)
-        Me.profPicModal.Controls.Add(Me.pbMain)
+        Me.profPicModal.Controls.Add(Me.PictureBox3)
         Me.profPicModal.Controls.Add(Me.PictureBox2)
         Me.profPicModal.Controls.Add(Me.Label8)
         Me.profPicModal.Controls.Add(Me.PictureBox1)
@@ -387,15 +387,15 @@ Partial Class Profile
         Me.Label9.TabIndex = 48
         Me.Label9.Text = "You can select your prefered preset pictures or " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Upload your own"
         '
-        'pbMain
+        'PictureBox3
         '
-        Me.pbMain.Image = CType(resources.GetObject("pbMain.Image"), System.Drawing.Image)
-        Me.pbMain.Location = New System.Drawing.Point(295, 148)
-        Me.pbMain.Name = "pbMain"
-        Me.pbMain.Size = New System.Drawing.Size(105, 100)
-        Me.pbMain.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.pbMain.TabIndex = 50
-        Me.pbMain.TabStop = False
+        Me.PictureBox3.Image = CType(resources.GetObject("PictureBox3.Image"), System.Drawing.Image)
+        Me.PictureBox3.Location = New System.Drawing.Point(295, 148)
+        Me.PictureBox3.Name = "PictureBox3"
+        Me.PictureBox3.Size = New System.Drawing.Size(105, 100)
+        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox3.TabIndex = 50
+        Me.PictureBox3.TabStop = False
         '
         'PictureBox2
         '
@@ -473,7 +473,7 @@ Partial Class Profile
         Me.Panel4.PerformLayout()
         Me.profPicModal.ResumeLayout(False)
         Me.profPicModal.PerformLayout()
-        CType(Me.pbMain, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.backdrop.ResumeLayout(False)
@@ -501,7 +501,7 @@ Partial Class Profile
     Friend WithEvents Panel4 As System.Windows.Forms.Panel
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents Label6 As System.Windows.Forms.Label
-    Friend WithEvents OpenFileDialog1 As System.Windows.Forms.OpenFileDialog
+    Friend WithEvents OpenFileDialog As System.Windows.Forms.OpenFileDialog
     Friend WithEvents Label7 As System.Windows.Forms.Label
     Friend WithEvents profPicModal As System.Windows.Forms.Panel
     Friend WithEvents Button7 As System.Windows.Forms.Button
@@ -510,7 +510,7 @@ Partial Class Profile
     Friend WithEvents Label11 As System.Windows.Forms.Label
     Friend WithEvents Label10 As System.Windows.Forms.Label
     Friend WithEvents Label9 As System.Windows.Forms.Label
-    Friend WithEvents pbMain As System.Windows.Forms.PictureBox
+    Friend WithEvents PictureBox3 As System.Windows.Forms.PictureBox
     Friend WithEvents PictureBox2 As System.Windows.Forms.PictureBox
     Friend WithEvents Label8 As System.Windows.Forms.Label
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox

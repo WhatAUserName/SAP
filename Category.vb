@@ -19,15 +19,56 @@ Public Class Category
 
     Private Sub searchFilterCategoryName_TextChanged(sender As Object, e As EventArgs) Handles searchFilterCategoryName.TextChanged
 
+        flowLayout.Controls.Clear()
+
+        Dim conn As New SqlClient.SqlConnection
+        conn.ConnectionString = "server=R3COM8;user id=sa;password=sqlpassword123;Database=sample;"
+
+        Dim filterQuery = "%" + searchFilterCategoryName.Text + "%"
+
+        Try
+            conn.Open()
+            Dim query As String = "SELECT * FROM [dbo].[category] WHERE name LIKE @name "
+            Dim cmd As New SqlCommand(query, conn)
+            cmd.Parameters.AddWithValue("@name", filterQuery)
+
+            Dim reader = cmd.ExecuteReader()
+            Dim numberRow = 0
+            While reader.Read()
+                numberRow += 1
+                renderComponent(reader, numberRow)
+            End While
+        Catch ex As Exception
+            MsgBox(ex.ToString())
+        End Try
     End Sub
 
-    Private Sub editBtn_Click(sender As Object, e As EventArgs)
+    Private Sub editBtn_Click(sender As Object, e As EventArgs) Handles editBtn.Click
         Dim btn As Button = CType(sender, Button)
         productId = btn.Tag.ToString()
 
+        backdrop.Show()
+        editCategoryFormPane.Show()
+
+        Dim conn As New SqlClient.SqlConnection
+        conn.ConnectionString = "server=R3COM8;user id=sa;password=sqlpassword123;Database=sample;"
+        Try
+            conn.Open()
+            Dim query As String = "SELECT * FROM [dbo].[category] WHERE id=@id"
+            Dim cmd As New SqlCommand(query, conn)
+            cmd.Parameters.AddWithValue("@id", productId)
+
+            Dim reader = cmd.ExecuteReader()
+            While reader.Read()
+                editCategoryName.Text = reader("name")
+            End While
+
+        Catch ex As Exception
+            MsgBox("Something went wrong. Please try again later!")
+        End Try
     End Sub
 
-    Private Sub updateCategoryBtn_Click(sender As Object, e As EventArgs) Handles createCategoryBtn.Click
+    Private Sub updateCategoryBtn_Click(sender As Object, e As EventArgs) Handles updateCategoryBtn.Click
 
         Dim conn As New SqlClient.SqlConnection
         conn.ConnectionString = "server=R3COM8;user id=sa;password=sqlpassword123;Database=sample;"
@@ -36,13 +77,14 @@ Public Class Category
             conn.Open()
             Dim stmt As String = "UPDATE [dbo].[category] SET name=@name WHERE id=@id"
             Dim cmd As New SqlCommand(stmt, conn)
-            cmd.Parameters.AddWithValue("@name", editCategoryNameField.Text)
+            cmd.Parameters.AddWithValue("@name", editCategoryName.Text)
             cmd.Parameters.AddWithValue("@id", productId)
-
-            Dim reader = cmd.ExecuteReader()
             cmd.ExecuteNonQuery()
-
+            editCategoryFormPane.Hide()
+            backdrop.Hide()
+            populateCategories()
         Catch ex As Exception
+            MsgBox(ex.ToString())
             MsgBox("Something went wrong. Please try again later!")
         End Try
     End Sub
@@ -92,7 +134,7 @@ Public Class Category
 
     End Sub
 
-    Private Sub createCategoryBtn_Click(sender As Object, e As EventArgs) Handles createCategoryBtn.Click
+    Private Sub createCategoryBtn_Click(sender As Object, e As EventArgs)
 
         Dim conn As New SqlClient.SqlConnection
         conn.ConnectionString = "server=R3COM8;user id=sa;password=sqlpassword123;Database=sample;"
@@ -185,9 +227,15 @@ Public Class Category
         flowLayout.Controls.Add(categPane)
     End Sub
 
-    
-    Private Sub cancelAddUserBtn_Click(sender As Object, e As EventArgs) Handles cancelAddUserBtn.Click
+
+    Private Sub cancelAddCategoryBtn_Click(sender As Object, e As EventArgs) Handles cancelAddCategoryBtn.Click
         backdrop.Hide()
         createCategoryFormPane.Hide()
     End Sub
+
+    Private Sub cancelEditCategBtn_Click(sender As Object, e As EventArgs) Handles cancelEditCategBtn.Click
+        backdrop.Hide()
+        editCategoryFormPane.Hide()
+    End Sub
+   
 End Class
